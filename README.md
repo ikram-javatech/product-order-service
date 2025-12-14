@@ -77,23 +77,27 @@ Each layer depends only on the layer below it, ensuring **maintainability, testa
 ### Layer Responsibilities
 
 #### 🔹 Controller Layer
+
 - Handles HTTP requests and responses
 - Performs request validation
 - Delegates business logic to services
 - Contains no business logic
 
 #### 🔹 Service Layer (Interface)
+
 - Defines business contracts
 - Decouples controllers from implementations
 - Enables mocking and unit testing
 
 #### 🔹 Service Implementation Layer
+
 - Contains core business rules
 - Performs authorization and ownership checks
 - Coordinates repositories
 - **All application logging is centralized here**
 
 #### 🔹 Repository Layer
+
 - Handles persistence via Spring Data JPA
 - Contains no business or security logic
 
@@ -102,22 +106,28 @@ Each layer depends only on the layer below it, ensuring **maintainability, testa
 ## 🧠 Mapping Architecture to SOLID Principles
 
 ### Single Responsibility Principle (SRP)
+
 Each layer has a single responsibility:
+
 - Controllers → API handling
 - Services → Business logic
 - Repositories → Data access
 
 ### Open/Closed Principle (OCP)
+
 - Discount rules can be extended without modifying existing logic
 - Strategy Pattern supports extension without changes
 
 ### Liskov Substitution Principle (LSP)
+
 - Service implementations can be swapped without affecting controllers
 
 ### Interface Segregation Principle (ISP)
+
 - Service interfaces expose only required operations
 
 ### Dependency Inversion Principle (DIP)
+
 - Controllers depend on service interfaces, not implementations
 - Promotes loose coupling and testability
 
@@ -126,6 +136,7 @@ Each layer has a single responsibility:
 ## 🔐 Security Design
 
 ### Authentication
+
 - JWT-based authentication
 - Token generated on successful login
 - Token validated on every protected request
@@ -181,6 +192,7 @@ Bootstrap is disabled during tests using `@Profile("!test")`.
 ## 💸 Discount Calculation (Strategy Pattern)
 
 Discounts are calculated using the **Strategy Pattern**, allowing dynamic discount logic based on:
+
 - User role
 - Order total
 
@@ -199,6 +211,7 @@ This avoids conditional logic and supports easy extensibility.
 ## 📄 Request & Response Logging
 
 A global `RequestResponseLoggingFilter` logs:
+
 - HTTP method and URI
 - Response status and duration
 - Request and response bodies (size-limited)
