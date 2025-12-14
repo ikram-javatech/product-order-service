@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Laptop",
+    "description": "Gaming Laptop",
+    "price": "1200.50",
+    "quantity": 2,
+    "available": true
+  },
+  {
+    "name": "Smartphone",
+    "description": "Latest Smartphone",
+    "price": "800.00",
+    "quantity": 20,
+    "available": true
+  },
+  {
+    "name": "Headphones",
+    "description": "Noise Cancelling",
+    "price": "200.00",
+    "quantity": 50,
+    "available": true
+  }
+]
